@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Chemstar Sciences - Solutions for Growth</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="FB Chemstar Sciences Logo" class="logo">
+                <div class="company-info">
+                    <h1 class="company-name">FB Chemstar Sciences</h1>
+                    <p class="tagline">Solutions for Growth</p>
+                </div>
+            </div>
+            
+            <!-- Three Dot Menu -->
+            <div class="menu-container">
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="menu-list">
+                        <li><a href="#home" class="menu-link" onclick="navigateTo('home')">Home</a></li>
+                        <li><a href="#about" class="menu-link" onclick="navigateTo('about')">About</a></li>
+                        <li><a href="#services" class="menu-link" onclick="navigateTo('services')">Services</a></li>
+                        <li><a href="#contact" class="menu-link" onclick="navigateTo('contact')">Contact</a></li>
+                        <li class="separator"></li>
+                        <li><a href="#" class="menu-link staff-login" onclick="openStaffLogin(event)">Staff Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section home-section active">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Welcome to FB Chemstar Sciences</h2>
+                    <p class="hero-description">Providing innovative agricultural solutions for sustainable growth</p>
+                    <p class="location-badge">📍 Industrial Estate, Multan, Pakistan</p>
+                    <button class="cta-button" onclick="navigateTo('services')">Explore Our Services</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <p>FB Chemstar Sciences is committed to revolutionizing agriculture through cutting-edge chemical solutions and expert guidance. With our headquarters located in the Industrial Estate of Multan, Pakistan, we serve farmers and agricultural businesses across the region.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-box">
+                            <h3>Our Mission</h3>
+                            <p>To provide superior agricultural products that enhance crop yield and soil health</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h3>Our Vision</h3>
+                            <p>Solutions for Growth - Enabling sustainable agricultural development</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h3>Our Commitment</h3>
+                            <p>Quality products, reliable service, and expert agricultural consultation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🌾</div>
+                        <h3>Crop Solutions</h3>
+                        <p>Premium fertilizers and crop protection products for maximum yield</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧪</div>
+                        <h3>Soil Analysis</h3>
+                        <p>Professional soil testing and nutrient optimization services</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👨‍🌾</div>
+                        <h3>Expert Consultation</h3>
+                        <p>Personalized guidance from our experienced agricultural experts</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3>Bulk Supply</h3>
+                        <p>Reliable and efficient bulk supply of agricultural chemicals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>📞 Phone</h3>
+                            <p><a href="tel:03000198701">03000198701</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>📧 Email</h3>
+                            <p><a href="mailto:fbchemstarsciences@gmail.com">fbchemstarsciences@gmail.com</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>📍 Location</h3>
+                            <p>Industrial Estate<br>Multan, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Staff Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeStaffLogin()">&times;</span>
+            <h2>Staff Login</h2>
+            <form id="staffLoginForm">
+                <input type="text" id="staffName" placeholder="Staff Name" required>
+                <input type="password" id="staffPassword" placeholder="Password" required>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Staff Dashboard Modal -->
+    <div id="staffDashboard" class="modal">
+        <div class="modal-content staff-dashboard-content">
+            <span class="close" onclick="closeStaffDashboard()">&times;</span>
+            <h2>Staff Dashboard</h2>
+            <p class="welcome-message" id="welcomeMessage"></p>
+            
+            <div class="dashboard-section">
+                <h3>Edit Website Content</h3>
+                <div class="edit-options">
+                    <button class="edit-btn" onclick="editSection('home')">Edit Home Section</button>
+                    <button class="edit-btn" onclick="editSection('about')">Edit About Section</button>
+                    <button class="edit-btn" onclick="editSection('services')">Edit Services Section</button>
+                    <button class="edit-btn" onclick="editSection('contact')">Edit Contact Section</button>
+                </div>
+            </div>
+
+            <div class="edit-area" id="editArea" style="display:none;">
+                <h3 id="editTitle"></h3>
+                <textarea id="editContent" rows="8" placeholder="Edit content here..."></textarea>
+                <div class="button-group">
+                    <button class="save-btn" onclick="saveChanges()">Save Changes</button>
+                    <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <button class="logout-btn" onclick="staffLogout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FB Chemstar Sciences. All rights reserved.</p>
+            <p>Solutions for Growth | Industrial Estate, Multan, Pakistan</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
